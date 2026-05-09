@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Google Fonts for that modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div style="font-weight: 600; font-size: 1.2rem; color: var(--primary);">SmartTask</div>
+        <div>
+            <a href="/" style="margin-right: 15px; text-decoration: none; color: var(--text);">Home</a>
+            {% if current_user.is_authenticated %}
+            <a href="/dashboard" style="margin-right: 15px; text-decoration: none; color: var(--text);">Dashboard</a>
+            <button onclick="handleLogout()" class="btn" style="background: #fee2e2; color: #ef4444;">Logout</button>
+            {% else %}
+            <a href="/login" class="btn btn-primary">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+flask
+flask-restful
+flask_sqlalchemy
+psycopg2-binary
+flask_login
+pandas
+flask-socketio

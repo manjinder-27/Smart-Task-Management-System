@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div id="analytics" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;">
+        <div class="card" style="padding: 1rem; text-align: center;">
+            <h4 style="margin:0">Total</h4>
+            <span id="total_tasks" style="font-size: 1.5rem; font-weight: bold;">0</span>
+        </div>
+        <div class="card" style="padding: 1rem; text-align: center;">
+            <h4 style="margin:0; color: var(--success);">Done</h4>
+            <span id="completed_tasks" style="font-size: 1.5rem; font-weight: bold;">0</span>
+        </div>
+        <div class="card" style="padding: 1rem; text-align: center;">
+            <h4 style="margin:0; color: brown;">Pending</h4>
+            <span id="pending_tasks" style="font-size: 1.5rem; font-weight: bold;">0</span>
+        </div>
+        <div class="card" style="padding: 1rem; text-align: center;">
+            <h4 style="margin:0; color: var(--text);">% Completed</h4>
+            <span id="completion_pct" style="font-size: 1.5rem; font-weight: bold;">0</span>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Your Tasks</h2>
+        <a href="/add-task" class="btn btn-primary">+ New Task</a>
+    </div>
+
+    <div id="taskList" style="margin-top: 1rem;">
+    </div>
+</div>
+{% endblock %}
